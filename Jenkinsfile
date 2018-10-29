@@ -8,7 +8,7 @@ pipeline {
      stages {
         stage('Build') {
             steps {
-                if (env.BRANCH_NAME== 'master')
+                if ("${env.BRANCH_NAME}"== 'master')
                 {
                     echo "branch: ${env.BRANCH_NAME}"
                 }
