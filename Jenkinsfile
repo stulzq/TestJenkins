@@ -5,22 +5,12 @@ pipeline {
             label 'slave-1'
         }
     }
-
-    stages {
-        stage('Build') {
-            steps {
-                echo 'Building..'
-            }
+    if(env.BRANCH_NAME == 'master'){
+     stage("Upload"){
+        echo 'Building..'
         }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
-        }
-    }
+     stage("Deploy"){
+        echo 'Testing..'
+       }
+     }
 }
