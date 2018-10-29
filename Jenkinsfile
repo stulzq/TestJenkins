@@ -36,5 +36,5 @@ pipeline {
             }
         }
     }
-    post { always { script { echo "${currentBuild.result}" } } }
+    post { always { script { currentBuild.result = 'NOT_BUILT' } } }
 }
