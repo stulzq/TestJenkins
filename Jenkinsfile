@@ -7,9 +7,6 @@ pipeline {
     }
      stages {
         stage('Build') {
-            when {
-                expression { env.BRANCH_NAME == 'master' }
-            }
             steps {
                 echo "branch: ${env.BRANCH_NAME}"
             }
@@ -20,6 +17,9 @@ pipeline {
             }
         }
         stage('Deploy') {
+            when {
+                branch "master"
+            }
             steps {
                 echo 'Deploying....'
             }
