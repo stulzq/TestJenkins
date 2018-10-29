@@ -7,11 +7,11 @@ pipeline {
     }
      stages {
         stage('Build') {
+            when {
+                expression { env.BRANCH_NAME == 'master' }
+            }
             steps {
-                if ("${env.BRANCH_NAME}"== 'master')
-                {
-                    echo "branch: ${env.BRANCH_NAME}"
-                }
+                echo "branch: ${env.BRANCH_NAME}"
             }
         }
         stage('Test') {
