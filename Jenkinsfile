@@ -6,7 +6,7 @@ pipeline {
         }
     }
     triggers {
-      githubWebhook()
+      githubPush()
     }
      stages {
         stage('Build') {
