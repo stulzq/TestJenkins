@@ -5,6 +5,9 @@ pipeline {
             label 'slave-1'
         }
     }
+    triggers {
+      githubWebhook()
+    }
      stages {
         stage('Build') {
             steps {
