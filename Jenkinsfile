@@ -21,7 +21,7 @@ pipeline {
                 branch "test"
             }
             steps {
-                echo 'Deploying....'
+                echo 'test'
             }
         }
     }
