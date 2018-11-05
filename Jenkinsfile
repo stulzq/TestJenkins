@@ -28,7 +28,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
-                echo "${NUGET_KEY}"
+                echo "${env.NUGET_KEY}"
             }
         }
         stage('Deploy') {
