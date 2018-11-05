@@ -5,6 +5,9 @@ pipeline {
             label 'slave-1'
         }
     }
+    environment {
+        NUGET_KEY     = credentials('CanalSharp_Nuget_key')
+    }
     triggers {
       githubPush()
     }
@@ -25,6 +28,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
+                echo "${NUGET_KEY}"
             }
         }
         stage('Deploy') {
