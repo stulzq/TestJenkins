@@ -1,8 +1,8 @@
 #!/usr/bin/env groovy Jenkinsfile
+
+def cusversion="1.0.0"
+
 pipeline {
-    script {
-        def cusversion="1.0.0"
-    }
     agent {
         node {
             label 'slave-1'
