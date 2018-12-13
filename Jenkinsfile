@@ -15,6 +15,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo "branch: ${env.BRANCH_NAME}"
+                echo "current SHA: ${env.GIT_COMMIT}"
+                echo "previous SHA: ${env.GIT_PREVIOUS_COMMIT}"
                 script {
                     result = sh (script: "git log -1 | grep '\\[ci skip\\]'", returnStatus: true) 
                     if (result != 0) {
