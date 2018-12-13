@@ -16,8 +16,8 @@ pipeline {
             steps {
                 echo "branch: ${env.BRANCH_NAME}"
                 echo "current SHA: ${env.GIT_COMMIT}"
-                echo "previous SHA: ${env.GIT_PREVIOUS_COMMIT}"
-                sh "git diff --stat ${env.GIT_PREVIOUS_COMMIT} ${env.GIT_COMMIT} | grep '\|' | awk '{print $1}'"
+                echo "previous SHA: ${env.GIT_PREVIOUS_SUCCESSFUL_COMMIT}"
+                sh "git diff --stat ${env.GIT_PREVIOUS_SUCCESSFUL_COMMIT} ${env.GIT_COMMIT} | grep '|' | awk '{print $1}'"
                 script {
                     result = sh (script: "git log -1 | grep '\\[ci skip\\]'", returnStatus: true) 
                     if (result != 0) {
