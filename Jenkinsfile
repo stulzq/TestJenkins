@@ -17,8 +17,11 @@ pipeline {
                 echo "branch: ${env.BRANCH_NAME}"
                 echo "current SHA: ${env.GIT_COMMIT}"
                 echo "previous SHA: ${env.GIT_PREVIOUS_SUCCESSFUL_COMMIT}"
-                res1 = sh (script: "git diff --name-only $GIT_PREVIOUS_SUCCESSFUL_COMMIT|grep 'Jenkinsfile'", returnStatus: true) 
-                echo "res1: ${res1}"
+                script {
+                    res1 = sh (script: "git diff --name-only $GIT_PREVIOUS_SUCCESSFUL_COMMIT|grep 'Jenkinsfile'", returnStatus: true) 
+                    echo "res1: ${res1}"
+                
+                }
                 script {
                     result = sh (script: "git log -1 | grep '\\[ci skip\\]'", returnStatus: true) 
                     if (result != 0) {
