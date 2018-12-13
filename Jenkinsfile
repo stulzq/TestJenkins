@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy Jenkinsfile
 
-def cusversion="1.0.0"
+def cusversion="Jenkinsfile"
 
 pipeline {
     agent {
@@ -21,7 +21,7 @@ pipeline {
                 echo "current SHA: ${env.GIT_COMMIT}"
                 echo "previous SHA: ${env.GIT_PREVIOUS_SUCCESSFUL_COMMIT}"
                 script {
-                    res1 = sh (script: "git diff --name-only $GIT_PREVIOUS_SUCCESSFUL_COMMIT|grep 'Jenkinsfile2'", returnStatus: true) 
+                    res1 = sh (script: "git diff --name-only $GIT_PREVIOUS_SUCCESSFUL_COMMIT|grep '$cusversion'", returnStatus: true) 
                     echo "res1: ${res1}"
                     echo "cusversion: ${cusversion}"
                 
