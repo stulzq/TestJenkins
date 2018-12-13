@@ -39,15 +39,9 @@ pipeline {
             }
         }
         stage('Test') {
-            steps {
+            steps('aa') {
                 echo 'Testing..'
                 echo "${env.NUGET_KEY}"
-                setp('test_1') {
-                    echo 'test_1'
-                }
-                setp('test_2') {
-                    echo 'test_2'
-                }
             }
         }
         stage('Deploy') {
