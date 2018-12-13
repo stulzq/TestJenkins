@@ -1,5 +1,6 @@
 #!/usr/bin/env groovy Jenkinsfile
 pipeline {
+    def cusversion="1.0.0"
     agent {
         node {
             label 'slave-1'
@@ -20,6 +21,7 @@ pipeline {
                 script {
                     res1 = sh (script: "git diff --name-only $GIT_PREVIOUS_SUCCESSFUL_COMMIT|grep 'Jenkinsfile2'", returnStatus: true) 
                     echo "res1: ${res1}"
+                    echo "cusversion: ${cusversion}"
                 
                 }
                 script {
