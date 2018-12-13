@@ -18,7 +18,7 @@ pipeline {
                 echo "current SHA: ${env.GIT_COMMIT}"
                 echo "previous SHA: ${env.GIT_PREVIOUS_SUCCESSFUL_COMMIT}"
                 script {
-                    res1 = sh (script: "git diff --name-only $GIT_PREVIOUS_SUCCESSFUL_COMMIT|grep 'Jenkinsfile'", returnStatus: true) 
+                    res1 = sh (script: "git diff --name-only $GIT_PREVIOUS_SUCCESSFUL_COMMIT|grep 'Jenkinsfile2'", returnStatus: true) 
                     echo "res1: ${res1}"
                 
                 }
