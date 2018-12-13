@@ -43,6 +43,10 @@ pipeline {
                 echo 'Testing..'
                 echo "${env.NUGET_KEY}"
             }
+            steps('bb') {
+                echo 'Testing..'
+                echo "${env.NUGET_KEY}"
+            }
         }
         stage('Deploy') {
             when {
