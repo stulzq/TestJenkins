@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy Jenkinsfile
 
 def cusversion="Jenkinsfile"
-
+library 'JenkinsSharedLibraries'
 pipeline {
     agent {
         node {
@@ -24,6 +24,8 @@ pipeline {
                     res1 = sh (script: "git diff --name-only $GIT_PREVIOUS_SUCCESSFUL_COMMIT|grep '$cusversion'", returnStatus: true) 
                     echo "res1: ${res1}"
                     echo "cusversion: ${cusversion}"
+                    res2=releaseSelector 'Jenkinsfile'
+                    echo "res2: ${res2}"
                 
                 }
                 script {
