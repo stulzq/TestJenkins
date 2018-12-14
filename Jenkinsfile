@@ -24,7 +24,7 @@ pipeline {
              steps {
                          
              testStage 'aaa'
-             currentBuild.result = 'SUCCESS'
+                      script {currentBuild.result = 'SUCCESS'}
              }
          }
           stage('build') {
