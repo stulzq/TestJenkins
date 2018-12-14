@@ -25,7 +25,9 @@ pipeline {
       githubPush()
     }
      stages {
-        testStage 'aaa'
+         script {
+             testStage 'aaa'
+         }
         stage('Build') {
             steps {
                 echo "branch: ${env.BRANCH_NAME}"
