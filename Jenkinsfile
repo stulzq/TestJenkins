@@ -26,7 +26,7 @@ pipeline {
              testStage 'aaa'
              }
          }
-              stage({'Build'+'aaa'}) {
+          stage('build') {
             steps {
                 echo "branch: ${env.BRANCH_NAME}"
                 echo "current SHA: ${env.GIT_COMMIT}"
