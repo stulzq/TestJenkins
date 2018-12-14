@@ -24,9 +24,7 @@ pipeline {
     }
      stages {
          stage('Testaaa') {
-            script {
              testStage 'aaa'
-         }
          }
         stage('Build') {
             steps {
