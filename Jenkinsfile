@@ -15,11 +15,9 @@ pipeline {
       githubPush()
     }
      stages {
-        def cusversions1="Jenkinsfile"
         stage('Build') {
             def cusversions2="Jenkinsfile"
             steps {
-                def cusversions3="Jenkinsfile"
                 echo "branch: ${env.BRANCH_NAME}"
                 echo "current SHA: ${env.GIT_COMMIT}"
                 echo "previous SHA: ${env.GIT_PREVIOUS_SUCCESSFUL_COMMIT}"
