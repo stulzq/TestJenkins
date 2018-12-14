@@ -54,5 +54,12 @@ pipeline {
             }
         }
     }
-    post { always { script { currentBuild.result = 'NOT_BUILT' } } }
+    post { always { 
+        script { currentBuild.result = 'NOT_BUILT' } 
+        stage('Testaaa') {
+            steps {
+                echo 'Testingaaa..'
+            }
+        }
+    } }
 }
