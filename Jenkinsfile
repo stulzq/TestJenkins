@@ -22,8 +22,6 @@ pipeline {
                 echo "previous SHA: ${env.GIT_PREVIOUS_SUCCESSFUL_COMMIT}"
                 echo "WORKSPACE: ${env.WORKSPACE}"
                 script {
-                    
-                    def cusversions2="Jenkinsfile"
                     res1 = sh (script: "git diff --name-only $GIT_PREVIOUS_SUCCESSFUL_COMMIT|grep '$cusversion'", returnStatus: true) 
                     echo "res1: ${res1}"
                     echo "cusversion: ${cusversion}"
@@ -32,7 +30,6 @@ pipeline {
                 
                 }
                 script {
-                    echo "cusversions2: ${cusversions2}"
                     result = sh (script: "git log -1 | grep '\\[ci skip\\]'", returnStatus: true) 
                     if (result != 0) {
                         echo "performing build..."
