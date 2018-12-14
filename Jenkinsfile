@@ -20,17 +20,12 @@ pipeline {
       githubPush()
     }
      stages {
-              try{
          stage('Testaaa') {
              steps {
                          
              testStage 'aaa'
              }
-         }}
-         catch(errors)
-              {echo 'error'}
-              finally{
-              echo 'finally'}
+         }
         stage('Build') {
             steps {
                 echo "branch: ${env.BRANCH_NAME}"
