@@ -2,12 +2,10 @@
 
 def cusversion="Jenkinsfile"
 def testStage(String ppp) {
-    stage('Testa') {
             steps {
                 echo 'Testing..'
                 echo "${env.NUGET_KEY}"
             }
-        }
 }
 
 
@@ -25,8 +23,10 @@ pipeline {
       githubPush()
     }
      stages {
-         script {
+         stage('Testaaa') {
+            script {
              testStage 'aaa'
+         }
          }
         stage('Build') {
             steps {
