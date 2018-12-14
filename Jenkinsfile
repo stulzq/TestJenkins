@@ -20,6 +20,7 @@ pipeline {
                 echo "branch: ${env.BRANCH_NAME}"
                 echo "current SHA: ${env.GIT_COMMIT}"
                 echo "previous SHA: ${env.GIT_PREVIOUS_SUCCESSFUL_COMMIT}"
+                echo "WORKSPACE: ${env.WORKSPACE}"
                 script {
                     res1 = sh (script: "git diff --name-only $GIT_PREVIOUS_SUCCESSFUL_COMMIT|grep '$cusversion'", returnStatus: true) 
                     echo "res1: ${res1}"
