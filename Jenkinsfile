@@ -1,6 +1,16 @@
 #!/usr/bin/env groovy Jenkinsfile
 
 def cusversion="Jenkinsfile"
+def testStage(String ppp) {
+    stage('Testa') {
+            steps {
+                echo 'Testing..'
+                echo "${env.NUGET_KEY}"
+            }
+        }
+}
+
+
 library 'JenkinsSharedLibraries'
 pipeline {
     agent {
