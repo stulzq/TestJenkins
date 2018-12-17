@@ -27,6 +27,11 @@ pipeline {
              testStage 'aaa'
                       script {currentBuild.result = 'SUCCESS'}
              }
+             timeout(time: 20, unit: 'MINUTES') {
+        //do something
+        echo "FAILURE stage"
+        //currentBuild.result = "FAILURE" //this will fail all the pipeline
+        }
          }
           stage('build') {
             steps {
