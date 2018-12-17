@@ -2,7 +2,7 @@
 
 def cusversion="Jenkinsfile"
 def testStage(String ppp) {
-         echo 'functions ${ppp}'
+         echo 'functions $ppp'
 }
 
 
