@@ -29,9 +29,9 @@ pipeline {
                            currentBuild.result = 'SUCCESS'
                            timeout(time: 20, unit: 'MINUTES') {
                            echo "FAILURE stage"
-                           def aaa='aaa'
+                           def aaa2='aaa'
                            }
-                           echo 'aaa: ${aaa}'+aaa
+                           echo 'aaa: '+aaa2
                   }
              }
          }
