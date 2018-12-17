@@ -24,6 +24,7 @@ pipeline {
          stage('Testaaa') {
              steps {     
                   testStage 'aaa'
+                  sleep(time:3,unit:"SECONDS")
                   script {
                            currentBuild.result = 'SUCCESS'
                            timeout(time: 20, unit: 'MINUTES') {
