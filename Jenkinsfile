@@ -31,7 +31,7 @@ pipeline {
                            echo "FAILURE stage"
                            def aaa2='aaa'
                            }
-                           echo 'aaa: '+aaa2
+                           echo 'aaa: ${aaa2}'
                   }
              }
          }
